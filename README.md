@@ -28,7 +28,6 @@ python run_clhhn.py
 ```
 
 ## Citation
-To be Added.
 ```text
 @article{10.1145/3626569,
 author = {Ma, Yutao and Wang, Zesheng and Huang, Liwei and Wang, Jian},
