@@ -6,8 +6,9 @@ class LastAttention(nn.Module):
 	def __init__(self, hidden_dim):
 		super(LastAttention, self).__init__()
 		self.hidden_size = hidden_dim
-		self.position_embedding = nn.Embedding(100, self.hidden_size)
-		self.w_hp = nn.Linear(self.hidden_size * 2, self.hidden_size, bias=False)
+		self.pos_size = hidden_dim / 2
+		self.position_embedding = nn.Embedding(100, self.pos_size)
+		self.w_hp = nn.Linear(self.hidden_size + self.pos_size, self.hidden_size, bias=False)
 		self.w1 = nn.Linear(self.hidden_size, self.hidden_size, bias=True)
 		self.w2 = nn.Linear(self.hidden_size, self.hidden_size, bias=False)
 		self.q = nn.Linear(self.hidden_size, 1, bias=False)
